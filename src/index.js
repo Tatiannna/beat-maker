@@ -10,6 +10,7 @@ container.appendChild(newTrackButton);
 
 
 const track = document.createElement('ul');
+track.setAttribute("class", "track");
 
 for (let i = 0; i < 8; i++){
     let li = document.createElement('li');
@@ -25,7 +26,8 @@ container.appendChild(track);
 
 newTrackButton.addEventListener("click", (e) =>{
     //e.preventDefault();
-    const track = document.createElement('ul');
+    let track = document.createElement('ul');
+    track.setAttribute("class", "track");
 
     for (let i = 0; i < 8; i++){
         let li = document.createElement('li');
