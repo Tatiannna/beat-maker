@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\nconst container = document.getElementById(\"container\");\n\nconst track = document.createElement('ul');\n\nfor (let i = 0; i < 8; i++){\n    let li = document.createElement('li');\n    li.dataset.pos = `${i}`;\n    track.appendChild(li);\n}\n\nconsole.log(container);\ncontainer.appendChild(track);\n\nconst addTrackButton = document.createElement('button');\n\n\n//# sourceURL=webpack://beat-maker/./src/index.js?");
+eval("\n\nconst container = document.getElementById(\"container\");\n\nconst newTrackButton = document.createElement('button');\nnewTrackButton.textContent = 'Add Track';\ncontainer.appendChild(newTrackButton);\n\n\n\n\nconst track = document.createElement('ul');\n\nfor (let i = 0; i < 8; i++){\n    let li = document.createElement('li');\n    li.dataset.pos = `${i}`;\n    track.appendChild(li);\n}\n\nconsole.log(container);\ncontainer.appendChild(track);\n\n\n\n\nnewTrackButton.addEventListener(\"click\", (e) =>{\n    //e.preventDefault();\n    const track = document.createElement('ul');\n\n    for (let i = 0; i < 8; i++){\n        let li = document.createElement('li');\n        li.dataset.pos = `${i}`;\n        track.appendChild(li);\n    }\n\n    console.log(container);\n    container.appendChild(track);\n});\n\n//# sourceURL=webpack://beat-maker/./src/index.js?");
 
 /***/ })
 

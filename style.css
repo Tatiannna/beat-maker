@@ -17,3 +17,11 @@ li {
     margin: 3px;
     background-color: pink;
 }
+
+li:hover {
+    background-color: green;
+}
+
+#nav {
+    height: 120px;
+}
