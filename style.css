@@ -4,22 +4,26 @@
     width: 500px;
 }
 
+
+
+
 ul {
     display: flex;
     flex-wrap: wrap;
     width: 500px;
     background-color: yellow;
+    border-style: solid;
+    border-color: black;
 }
 
 li {
     width: 20px;
     height: 60px;
     margin: 3px;
-    background-color: pink;
 }
 
 li:hover {
-    background-color: green;
+    background-color: navy;
 }
 
 #nav {
@@ -28,4 +32,18 @@ li:hover {
 
 .track {
     margin: 2px;
+
+}
+
+.segment{
+    border-color: black;
+    border-style: 1px solid;
+}
+
+.on{
+    background-color: black;
+}
+
+.off{
+    background-color: white;
 }
