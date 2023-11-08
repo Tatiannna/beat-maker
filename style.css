@@ -1,0 +1,19 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    background-color: yellow;
+}
+
+li {
+    width: 20px;
+    height: 60px;
+    margin: 3px;
+    background-color: pink;
+}
