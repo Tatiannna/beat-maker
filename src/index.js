@@ -33,15 +33,35 @@ for (let i = 0; i < 8; i++){
 
 container.appendChild(track);
 
+let segmentState = false;
+
+track.addEventListener("click", (e) =>{
+
+    console.log("segment clicked!")
+    // toggle class on/off
+    if (segmentState === false){
+        e.target.classList.remove("off")
+        e.target.classList.add("on")
+        segmentState = true;
+    }else{
+        e.target.classList.remove("on")
+        e.target.classList.add("off")
+        segmentState = false;
+    }
+});
+
+
+
 
 
 
 
 newTrackButton.addEventListener("click", (e) =>{
-    //e.preventDefault();
+    //Create Track
     let track = document.createElement('ul');
     track.classList.add("track");
 
+    
     //Add controls
     let remove = document.createElement('button');
     remove.textContent = 'Remove';
@@ -49,7 +69,6 @@ newTrackButton.addEventListener("click", (e) =>{
     mute.textContent = 'Mute';
     track.appendChild(remove);
     track.appendChild(mute);
-
 
     //Add segments
     for (let i = 0; i < 8; i++){
@@ -59,7 +78,27 @@ newTrackButton.addEventListener("click", (e) =>{
         segment.dataset.pos = `${i}`;
         track.appendChild(segment);
     }
-
-    console.log(container);
     container.appendChild(track);
+
+
+    //Add listener to track (for segments)
+
+    let segmentState = false;
+
+    track.addEventListener("click", (e) =>{
+
+        console.log("segment clicked!")
+        // toggle class on/off
+        if (segmentState === false){
+            e.target.classList.remove("off");
+            e.target.classList.add("on");
+            segmentState = true;
+        }else{
+            e.target.classList.remove("on");
+            e.target.classList.add("off");
+            segmentState = false;
+        }
+    });
+
 });
+
