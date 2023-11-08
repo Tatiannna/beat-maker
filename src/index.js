@@ -1,10 +1,11 @@
 
 
 const container = document.getElementById("container");
+const navBar = document.getElementById("nav");
 
 const newTrackButton = document.createElement('button');
 newTrackButton.textContent = 'Add Track';
-container.appendChild(newTrackButton);
+nav.appendChild(newTrackButton);
 
 
 

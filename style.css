@@ -1,24 +1,24 @@
 #container {
     display: flex;
     flex-wrap: wrap;
-    width: 500px;
 }
-
-
 
 
 ul {
     display: flex;
     flex-wrap: wrap;
-    width: 500px;
-    background-color: yellow;
+    width: 600px;
+    background-color: grey;
     border-style: solid;
     border-color: black;
+    justify-content: flex-end;
+    padding: 8px;
+
 }
 
 li {
-    width: 20px;
-    height: 60px;
+    width: 40px;
+    height: 100px;
     margin: 3px;
 }
 
@@ -31,13 +31,12 @@ li:hover {
 }
 
 .track {
-    margin: 2px;
-
+    margin: 3px;
+    border:2px solid black;
 }
 
 .segment{
-    border-color: black;
-    border-style: 1px solid;
+    border:2px solid black;
 }
 
 .on{
