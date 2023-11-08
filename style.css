@@ -3,38 +3,40 @@
     flex-wrap: wrap;
 }
 
-
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    width: 600px;
-    border-style: solid;
-    border-color: black;
-    justify-content: flex-end;
-    padding: 8px;
-
-}
-
-li {
-    width: 40px;
-    height: 100px;
-    margin: 3px;
-}
-
-li:hover {
-    background-color: navy;
-}
-
 #nav {
     height: 120px;
 }
+
 
 .track {
     margin: 3px;
     border:2px solid black;
 }
 
+.track-div-left{
+
+}
+
+
+.track-div-right{
+
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    background-color: grey;
+    border-style: solid;
+    border-color: black;
+    justify-content: flex-end;
+    padding: 8px;
+}
+
 .segment{
+    width: 40px;
+    height: 100px;
+    margin: 3px;
     border:2px solid black;
 }
 
@@ -46,6 +48,3 @@ li:hover {
     background-color: white;
 }
 
-.controls {
-
-}
