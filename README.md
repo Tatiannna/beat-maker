@@ -26,6 +26,7 @@ https://wireframe.cc/pro/pp/005659a2e699142
 
 - Webpack to bundle source code
 - npm to manage project dependencies
+- Howler.js
 
 
 
