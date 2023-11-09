@@ -1,3 +1,5 @@
+#Beats
+
 ## Background
 
 This app will allow users to create, customize and stack music tracks to create their own beats! The simple, intuitive interface will allow even inexperienced users to experiment with beat-making immediately.
