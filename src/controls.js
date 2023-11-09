@@ -42,7 +42,8 @@ class Controls {
 
         for(let i = 0; i < 5; i++){
             let option = document.createElement("option");
-            option.textContent = "option";
+            option.textContent = `Type ${i}`;
+            option.value = `${i}`;
             soundTypeMenu.appendChild(option);
         } 
         trackLeft.appendChild(soundTypeMenu);
@@ -57,13 +58,14 @@ class Controls {
 
         for(let i = 0; i < 5; i++){
             let option = document.createElement("option");
-            option.textContent = "option";
+            option.textContent = `Instrument ${i}`;
+            option.value = `${i}`;
             soundMenu.appendChild(option);
         } 
+
+        console.log(soundMenu);
+
         trackLeft.appendChild(soundMenu);
-
-
-        
     }
 
     addControlListeners(remove){
