@@ -13,24 +13,6 @@ const track = document.createElement('div');
 track.classList.add("track");
 container.appendChild(track);
 
-//Right track div
-const trackRight = document.createElement('div');
-trackRight.classList.add("track-div-right")
-track.appendChild(trackRight);
-
-
-//Add segments to right track div
-const trackUL = document.createElement('ul');
-for (let i = 0; i < 8; i++){
-    let segment = document.createElement('li');
-    segment.classList.add("segment");
-    segment.classList.add("off");
-    segment.dataset.pos = `${i}`;
-    track.appendChild(segment);
-}
-trackRight.appendChild(trackUL);
-
-
 
 // create Left track div
 const trackLeft = document.createElement('div');
@@ -46,11 +28,32 @@ track.appendChild(trackLeft);
     trackLeft.appendChild(mute);
 
 
+//Right track div
+const trackRight = document.createElement('div');
+trackRight.classList.add("track-div-right")
+track.appendChild(trackRight);
 
 
+//Add segments to right track div
+let trackUL = document.createElement('ul');
+for (let i = 0; i < 8; i++){
+    let segment = document.createElement('li');
+    segment.classList.add("segment");
+    segment.classList.add("off");
+    segment.dataset.pos = `${i}`;
+    trackUL.appendChild(segment);
+}
+
+trackRight.appendChild(trackUL);
+console.log(trackUL.parentElement);
+
+
+
+// toggle segments class on/ off from click
 let segmentState = false;
+trackUL.addEventListener("click", (e) =>{
 
-track.addEventListener("click", (e) =>{
+    e.stopPropagation();
 
     console.log("segment clicked!")
     // toggle class on/off
@@ -67,50 +70,109 @@ track.addEventListener("click", (e) =>{
 
 
 newTrackButton.addEventListener("click", (e) =>{
-
-    //Create Track
-
-    let trackUL = document.createElement('ul');
-    //trackUL.classList.add("track");
+    // //Create Track
+    // let trackUL = document.createElement('ul');
+    // //trackUL.classList.add("track");
 
     
-    //Add controls
+    // //Add controls
+    // let remove = document.createElement('button');
+    // remove.textContent = 'Remove';
+    // let mute = document.createElement('button');
+    // mute.textContent = 'Mute';
+    // track.appendChild(remove);
+    // track.appendChild(mute);
+
+    // //Add segments
+    // for (let i = 0; i < 8; i++){
+    //     let segment = document.createElement('li');
+    //     segment.classList.add("segment");
+    //     segment.classList.add("off");
+    //     segment.dataset.pos = `${i}`;
+    //     track.appendChild(segment);
+    // }
+    // container.appendChild(track);
+
+
+    // //Add listener to track (for segments)
+    // let segmentState = false;
+
+    // trackUL.addEventListener("click", (e) =>{
+
+    //     console.log("segment clicked!")
+    //     // toggle class on/off
+    //     if (segmentState === false){
+    //         e.target.classList.remove("off");
+    //         e.target.classList.add("on");
+    //         segmentState = true;
+    //     }else{
+    //         e.target.classList.remove("on");
+    //         e.target.classList.add("off");
+    //         segmentState = false;
+    //     }
+    // });
+
+
+
+    //Track container
+const track = document.createElement('div');
+track.classList.add("track");
+container.appendChild(track);
+
+
+// create Left track div
+const trackLeft = document.createElement('div');
+trackLeft.classList.add("track-div-left");
+track.appendChild(trackLeft);
+
+// Add controls to left track div
     let remove = document.createElement('button');
     remove.textContent = 'Remove';
     let mute = document.createElement('button');
     mute.textContent = 'Mute';
-    track.appendChild(remove);
-    track.appendChild(mute);
+    trackLeft.appendChild(remove);
+    trackLeft.appendChild(mute);
 
-    //Add segments
-    for (let i = 0; i < 8; i++){
-        let segment = document.createElement('li');
-        segment.classList.add("segment");
-        segment.classList.add("off");
-        segment.dataset.pos = `${i}`;
-        track.appendChild(segment);
+
+//Right track div
+const trackRight = document.createElement('div');
+trackRight.classList.add("track-div-right")
+track.appendChild(trackRight);
+
+
+//Add segments to right track div
+let trackUL = document.createElement('ul');
+for (let i = 0; i < 8; i++){
+    let segment = document.createElement('li');
+    segment.classList.add("segment");
+    segment.classList.add("off");
+    segment.dataset.pos = `${i}`;
+    trackUL.appendChild(segment);
+}
+
+trackRight.appendChild(trackUL);
+console.log(trackUL.parentElement);
+
+
+
+// toggle segments class on/ off from click
+let segmentState = false;
+trackUL.addEventListener("click", (e) =>{
+
+    e.stopPropagation();
+
+    console.log("segment clicked!")
+    // toggle class on/off
+    if (segmentState === false){
+        e.target.classList.remove("off")
+        e.target.classList.add("on")
+        segmentState = true;
+    }else{
+        e.target.classList.remove("on")
+        e.target.classList.add("off")
+        segmentState = false;
     }
-    container.appendChild(track);
-
-
-    //Add listener to track (for segments)
-
-    let segmentState = false;
-
-    track.addEventListener("click", (e) =>{
-
-        console.log("segment clicked!")
-        // toggle class on/off
-        if (segmentState === false){
-            e.target.classList.remove("off");
-            e.target.classList.add("on");
-            segmentState = true;
-        }else{
-            e.target.classList.remove("on");
-            e.target.classList.add("off");
-            segmentState = false;
-        }
-    });
+});
 
 });
 
