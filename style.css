@@ -36,12 +36,6 @@
 ul {
     display: flex;
     flex-wrap: wrap;
-    /* width: 600px;
-    background-color: grey;
-    border-style: solid;
-    border-color: black;
-    justify-content: flex-end;
-    padding: 8px; */
 }
 
 .segment{
