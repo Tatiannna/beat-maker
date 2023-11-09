@@ -1,10 +1,14 @@
 import Controls from "./controls.js";
+import Sound from "./sound.js";
+
 
 class Track {
     // add track - add segments, listeners to segments, controls, 
 
     constructor(container){
         this.track = this.addTrack(container);
+        this.sound = new Sound(this.track);
+        console.log("SOUND IS", this.sound);
     }
 
     addTrack(container){
@@ -52,6 +56,8 @@ class Track {
                 e.target.classList.remove("off");
                 e.target.classList.add("on");
                 segmentState = true;
+                console.log(this);
+                this.sound.playSound();
             }else{
                 e.target.classList.remove("on");
                 e.target.classList.add("off");
