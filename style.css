@@ -2,10 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     width: 800px;
+    padding-left: 150px;
 }
 
 #nav {
     height: 120px;
+    background-color: black;
+    color: white;
 }
 
 
@@ -13,19 +16,18 @@
     margin: 3px;
     border:2px solid black;
     display: flex;
-    width: 600px;
+    width: 650px;
 }
 
 .track-div-left{
     background-color: grey;
-
 }
 
 
 .track-div-right{
     display: flex;
     flex-wrap: wrap;
-    width: 600px;
+    width: 700px;
     background-color: grey;
     border-style: solid;
     border-color: black;

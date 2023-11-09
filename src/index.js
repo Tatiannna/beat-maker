@@ -1,7 +1,4 @@
 import Track from "./track.js"
-import Controls from "./track.js"
-
-
 
 
 const container = document.getElementById("container");
@@ -17,6 +14,13 @@ const track = new Track(container);
 newTrackButton.addEventListener("click", (e) =>{
     new Track(container);
 });
+
+
+
+
+
+
+
 
 
 // //Track container

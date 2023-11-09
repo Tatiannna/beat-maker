@@ -64,8 +64,5 @@ class Track {
     // randomize (add "on" class to random segments)
 }
 
-    
-
-
 
 export default Track;

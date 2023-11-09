@@ -19,12 +19,37 @@ class Controls {
         trackLeft.appendChild(remove);
         trackLeft.appendChild(mute);
 
-        // Remove button listener
+        // 'Remove' button listener
         this.addControlListeners(remove);
+
+        // Test Sound
+        const testButton = document.createElement('button');
+        testButton.textContent = 'Test';
+        trackLeft.appendChild(testButton);
+
+        testButton.addEventListener("click", (e) =>{
+            const audioElement = new Audio("./assets/RD_C_1.wav");
+            audioElement.play();
+        });
+
+        // Sound TYPE selection dropdown menu
+        let soundTypeMenu = document.createElement('select');
+        let option = document.createElement("option");
+        option.textContent = "Select Sound Type";
+        option.setAttribute('selected', true);
+        option.setAttribute('disabled', true);
+        soundTypeMenu.appendChild(option);
+
+        for(let i = 0; i < 5; i++){
+            let option = document.createElement("option");
+            option.textContent = "option";
+            soundTypeMenu.appendChild(option);
+        } 
+        trackLeft.appendChild(soundTypeMenu);
 
         // Sound selection dropdown menu
         let soundMenu = document.createElement('select');
-        let option = document.createElement("option");
+        option = document.createElement("option");
         option.textContent = "Select Sound";
         option.setAttribute('selected', true);
         option.setAttribute('disabled', true);
@@ -36,6 +61,9 @@ class Controls {
             soundMenu.appendChild(option);
         } 
         trackLeft.appendChild(soundMenu);
+
+
+        
     }
 
     addControlListeners(remove){
