@@ -1,6 +1,7 @@
 class Controls {
 
     constructor(track){
+        this.track = track;
         this.controls = this.addControls(track);
     }
 
@@ -18,9 +19,8 @@ class Controls {
         trackLeft.appendChild(remove);
         trackLeft.appendChild(mute);
 
-        remove.addEventListener("click", (e) => {
-            track.remove()
-        });
+        // Remove button listener
+        this.addControlListeners(remove);
 
         // Sound selection dropdown menu
         let soundMenu = document.createElement('select');
@@ -38,10 +38,14 @@ class Controls {
         trackLeft.appendChild(soundMenu);
     }
 
-    addControlListeners(){
+    addControlListeners(remove){
         // listener for mute
         // listener for track remove
         // listener for volume
+        remove.addEventListener("click", (e) => {
+            this.track.remove()
+        });
+
     }
 }
 
