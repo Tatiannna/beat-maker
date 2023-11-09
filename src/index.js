@@ -32,6 +32,24 @@ remove.addEventListener("click", (e) => {
     track.remove()
 });
 
+// Sound selection dropdown menu
+let soundMenu = document.createElement('select');
+let option = document.createElement("option");
+option.textContent = "Select Sound";
+option.setAttribute('selected', true);
+option.setAttribute('disabled', true);
+soundMenu.appendChild(option);
+
+for(let i = 0; i < 5; i++){
+    let option = document.createElement("option");
+    option.textContent = "option";
+    soundMenu.appendChild(option);
+}
+    
+trackLeft.appendChild(soundMenu);
+
+
+
 
 //Right track div
 const trackRight = document.createElement('div');
