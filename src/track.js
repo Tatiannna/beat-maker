@@ -46,22 +46,17 @@ class Track {
 
 
     addSegmentListner(trackUL){
-        let segmentState = false;
-
         trackUL.addEventListener("click", (e) =>{
 
-            console.log("segment clicked!")
-            // toggle class on/off
-            if (segmentState === false){
+            console.log("segment clicked!");
+            console.log(e.srcElement.classList[1]);
+
+            if (e.srcElement.classList[1] === "off"){
                 e.target.classList.remove("off");
                 e.target.classList.add("on");
-                segmentState = true;
-                console.log(this);
-                this.sound.playSound();
             }else{
                 e.target.classList.remove("on");
                 e.target.classList.add("off");
-                segmentState = false;
             }
         });
     }
@@ -73,8 +68,8 @@ class Track {
         let delay = 0;
         for(let i = 0; i < 8; i++){
             setTimeout(()=> {
-                console.log(this.segments[i]);
-                console.log(this.segments[i].classList[1]);
+                //console.log(this.segments[i]);
+                //console.log(this.segments[i].classList[1]);
                 if (this.segments[i].classList[1] === "on"){
                     this.sound.playSound();
                 }
