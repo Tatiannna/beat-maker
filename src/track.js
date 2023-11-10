@@ -7,7 +7,8 @@ class Track {
 
     constructor(container){
         this.segments = [];
-        this.trackDiv = this.addTrack(container);
+        this.trackDiv = null;
+        this.addTrack(container);
         this.sound = new Sound(this.trackDiv);
     }
 
@@ -20,6 +21,9 @@ class Track {
         container.appendChild(this.trackDiv);
 
         // CALL ADD CONTROLS HERE
+        console.log("In Track. track.trackdiv is: ", this.trackDiv);
+        console.log("In Track. track is: ", this);
+
         let controls = new Controls(this); // PASS IN TRACK OBJECT, NOT DIV
 
 
@@ -42,6 +46,8 @@ class Track {
         this.addSegmentListner(trackUL);
     }
 
+
+
     addSegmentListner(trackUL){
         let segmentState = false;
 
@@ -63,14 +69,14 @@ class Track {
         });
     }
 
+
+
     playTrack(){
         let delay = 0;
-
         for(let i = 0; i < 8; i++){
             setTimeout(()=> {
                 this.sound.playSound();
             }, delay);
-
             delay += 1000;
         }
         console.log(this.segments);
