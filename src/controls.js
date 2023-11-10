@@ -48,7 +48,7 @@ class Controls {
         });
 
 
-        // Sound TYPE selection dropdown menu
+        // Sound PACK selection dropdown menu
         let soundTypeMenu = document.createElement('select');
         let option = document.createElement("option");
         option.textContent = "Select Sound Pack";
@@ -57,15 +57,7 @@ class Controls {
         soundTypeMenu.appendChild(option);
 
 
-
-
-
-
-
-
-        // populate from this.track.sound.packs
-        //const packs = this.track.sound.packs;
-
+        // Populate pack options
         for(let i = 0; i < Sound.packs.length; i++){
             let option = document.createElement("option");
             option.textContent = Sound.packs[i].name;
@@ -80,17 +72,43 @@ class Controls {
         option.textContent = "Select Sound";
         option.setAttribute('selected', true);
         option.setAttribute('disabled', true);
-        
         soundMenu.appendChild(option);
-
-        for(let i = 0; i < 5; i++){
-            let option = document.createElement("option");
-            option.textContent = `Instrument ${i}`;
-            option.value = `${i}`;
-            soundMenu.appendChild(option);
-        } 
-
         trackLeft.appendChild(soundMenu);
+
+
+        // listener for pack selection
+        let selectedPack = null;
+        soundTypeMenu.addEventListener("change", (e)=>{
+            selectedPack = e.srcElement.value;
+            console.log(selectedPack);
+
+            let numSounds;
+            let packIndex;
+            for(let i = 0; i < Sound.packs.length; i++){
+                if (selectedPack === Sound.packs[i].name){
+                    packIndex = i;
+                    numSounds = Sound.packs[i].count;
+                }
+            }
+
+            // List available sounds based on Pack selection
+            for(let i = 0; i < numSounds; i++){
+                let option = document.createElement("option");
+                option.textContent = `${Sound.packs[packIndex].name} ${i}`;
+                option.value = `${i}`;
+                soundMenu.appendChild(option);
+            }
+        });
+
+        //console.log(selectedPack);
+        //console.log(Sound.packs[0].name)
+        //console.log(numSounds);
+        //console.log(packIndex);
+
+
+
+        
+
     }
 
     addControlListeners(remove){
