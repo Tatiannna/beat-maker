@@ -64,11 +64,17 @@ class Track {
         });
     }
 
-    async playTrack(){
+    playTrack(){
+        let delay = 0;
+
         for(let i = 0; i < 8; i++){
-            this.sound.playSound();
             console.log("hello world!!!");
-            await delay(1000);
+
+            setTimeout(()=> {
+                this.sound.playSound();
+            }, delay);
+
+            delay += 1000;
         }
     }
     // randomize (add "on" class to random segments)
