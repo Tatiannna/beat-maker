@@ -60,18 +60,21 @@ class Track {
     }
 
 
-
     playTrack(){
+        let count = 0;
 
-        let delay = 0;
-        for(let i = 0; i < 8; i++){
-            setTimeout(()=> {
-                if (this.segments[i].classList[1] === "on"){
-                    this.sound.playSound();
-                }
-            }, delay);
-            delay += 1000;
+        const playSegment = function(){
+            if (this.segments[count].classList[1] === "on"){
+                this.sound.playSound();
+                console.log(`Playing sound for segment ${count}`);
+                count += 1;
+            }else{
+                console.log(`NO SOUND for segment ${count}`);
+                count += 1;
+            }
+            if (count === 8) clearInterval(countInterval);
         }
+        const countInterval = setInterval(playSegment.bind(this), 500);
     }
 
 
