@@ -1,4 +1,5 @@
 import Track from "./track.js";
+import Sound from "./sound.js";
 
 class Controls {
 
@@ -63,12 +64,12 @@ class Controls {
 
 
         // populate from this.track.sound.packs
-        const packs = this.track.sound.packs;
+        //const packs = this.track.sound.packs;
 
-        for(let i = 0; i < packs.length; i++){
+        for(let i = 0; i < Sound.packs.length; i++){
             let option = document.createElement("option");
-            option.textContent = packs[i].name;
-            option.value = packs[i].name;
+            option.textContent = Sound.packs[i].name;
+            option.value = Sound.packs[i].name;
             soundTypeMenu.appendChild(option);
         } 
         trackLeft.appendChild(soundTypeMenu);
