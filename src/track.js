@@ -47,16 +47,14 @@ class Track {
 
     addSegmentListner(trackUL){
         trackUL.addEventListener("click", (e) =>{
-
-            console.log("segment clicked!");
-            console.log(e.srcElement.classList[1]);
-
-            if (e.srcElement.classList[1] === "off"){
-                e.target.classList.remove("off");
-                e.target.classList.add("on");
-            }else{
-                e.target.classList.remove("on");
-                e.target.classList.add("off");
+            if (e.srcElement.classList[0] == "segment"){
+                if (e.srcElement.classList[1] === "off"){
+                    e.target.classList.remove("off");
+                    e.target.classList.add("on");
+                }else{
+                    e.target.classList.remove("on");
+                    e.target.classList.add("off");
+                }
             }
         });
     }
@@ -68,8 +66,6 @@ class Track {
         let delay = 0;
         for(let i = 0; i < 8; i++){
             setTimeout(()=> {
-                //console.log(this.segments[i]);
-                //console.log(this.segments[i].classList[1]);
                 if (this.segments[i].classList[1] === "on"){
                     this.sound.playSound();
                 }
