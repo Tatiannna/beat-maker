@@ -92,6 +92,7 @@ class Controls {
             }
 
             // List available sounds based on Pack selection
+            soundMenu.replaceChildren();
             for(let i = 0; i < numSounds; i++){
                 let option = document.createElement("option");
                 option.textContent = `${Sound.packs[packIndex].name} ${i}`;
@@ -99,16 +100,6 @@ class Controls {
                 soundMenu.appendChild(option);
             }
         });
-
-        //console.log(selectedPack);
-        //console.log(Sound.packs[0].name)
-        //console.log(numSounds);
-        //console.log(packIndex);
-
-
-
-        
-
     }
 
     addControlListeners(remove){
@@ -119,7 +110,6 @@ class Controls {
         remove.addEventListener("click", (e) => {
             this.track.trackDiv.remove();
         });
-
     }
 }
 
