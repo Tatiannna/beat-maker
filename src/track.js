@@ -21,9 +21,6 @@ class Track {
         container.appendChild(this.trackDiv);
 
         // CALL ADD CONTROLS HERE
-        console.log("In Track. track.trackdiv is: ", this.trackDiv);
-        console.log("In Track. track is: ", this);
-
         let controls = new Controls(this); // PASS IN TRACK OBJECT, NOT DIV
 
 
@@ -72,14 +69,18 @@ class Track {
 
 
     playTrack(){
+
         let delay = 0;
         for(let i = 0; i < 8; i++){
             setTimeout(()=> {
-                this.sound.playSound();
+                console.log(this.segments[i]);
+                console.log(this.segments[i].classList[1]);
+                if (this.segments[i].classList[1] === "on"){
+                    this.sound.playSound();
+                }
             }, delay);
             delay += 1000;
         }
-        console.log(this.segments);
     }
 
 
