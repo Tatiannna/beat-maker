@@ -1,15 +1,20 @@
+import Track from "./track.js";
+
 class Controls {
 
     constructor(track){
-        this.track = track;
-        this.controls = this.addControls(track);
+        this.track = track; //TRACK OBJECT, NOT DIV
+        this.addControls();
     }
 
-    addControls(track){
+    addControls(){
+        console.log("Calling addControls(). Value of track: ", this.track);
+
+
         // create Left track div
         const trackLeft = document.createElement('div');
         trackLeft.classList.add("track-div-left");
-        track.appendChild(trackLeft);
+        this.track.trackDiv.appendChild(trackLeft);
 
         // Add controls to left track div
         let remove = document.createElement('button');
@@ -22,7 +27,7 @@ class Controls {
         // 'Remove' button listener
         this.addControlListeners(remove);
 
-        // Test Sound
+        // Test Sound Button
         const testButton = document.createElement('button');
         testButton.textContent = 'Test';
         trackLeft.appendChild(testButton);
@@ -30,6 +35,16 @@ class Controls {
         testButton.addEventListener("click", (e) =>{
             const audioElement = new Audio("./assets/RD_C_1.wav");
             audioElement.play();
+        });
+
+        // Add Track Play button
+        const playButton = document.createElement("button");
+        playButton.textContent = "Play";
+        trackLeft.appendChild(playButton);
+
+        playButton.addEventListener("click", (e)=> {
+            console.log(this);
+            this.track.playTrack();
         });
 
         // Sound TYPE selection dropdown menu
@@ -73,7 +88,7 @@ class Controls {
         // listener for track remove
         // listener for volume
         remove.addEventListener("click", (e) => {
-            this.track.remove()
+            this.track.trackDiv.remove()
         });
 
     }

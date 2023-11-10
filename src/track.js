@@ -6,27 +6,29 @@ class Track {
     // add track - add segments, listeners to segments, controls, 
 
     constructor(container){
-        this.track = this.addTrack(container);
-        this.sound = new Sound(this.track);
+        this.trackDiv = this.addTrack(container);
+        this.sound = new Sound(this.trackDiv);
         console.log("SOUND IS", this.sound);
     }
 
     addTrack(container){
+
         console.log("adding a new track");
 
         //Track container
-        const track = document.createElement('div');
-        track.classList.add("track");
-        container.appendChild(track);
+        // const track = document.createElement('div');
+        this.trackDiv = document.createElement('div');
+        this.trackDiv.classList.add("track");
+        container.appendChild(this.trackDiv);
 
         // CALL ADD CONTROLS HERE
-        let controls = new Controls(track);
+        let controls = new Controls(this); // PASS IN TRACK OBJECT, NOT DIV
 
 
         //Right track div
         const trackRight = document.createElement('div');
         trackRight.classList.add("track-div-right")
-        track.appendChild(trackRight);
+        this.trackDiv.appendChild(trackRight);
 
         //Add segments to right track div
         let trackUL = document.createElement('ul');
@@ -39,12 +41,8 @@ class Track {
         }
         trackRight.appendChild(trackUL);
         this.addSegmentListner(trackUL);
-
-        return track;
     }
 
-
-    // add listener for segments
     addSegmentListner(trackUL){
         let segmentState = false;
 
@@ -66,7 +64,13 @@ class Track {
         });
     }
 
-
+    async playTrack(){
+        for(let i = 0; i < 8; i++){
+            this.sound.playSound();
+            console.log("hello world!!!");
+            await delay(1000);
+        }
+    }
     // randomize (add "on" class to random segments)
 }
 
