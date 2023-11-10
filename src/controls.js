@@ -8,7 +8,7 @@ class Controls {
     }
 
     addControls(){
-        console.log("Calling addControls(). Value of track: ", this.track);
+        // console.log("Calling addControls(). Value of track: ", this.track);
 
 
         // create Left track div
@@ -43,22 +43,32 @@ class Controls {
         trackLeft.appendChild(playButton);
 
         playButton.addEventListener("click", (e)=> {
-            console.log(this);
             this.track.playTrack();
         });
+
 
         // Sound TYPE selection dropdown menu
         let soundTypeMenu = document.createElement('select');
         let option = document.createElement("option");
-        option.textContent = "Select Sound Type";
+        option.textContent = "Select Sound Pack";
         option.setAttribute('selected', true);
         option.setAttribute('disabled', true);
         soundTypeMenu.appendChild(option);
 
-        for(let i = 0; i < 5; i++){
+
+
+
+
+
+
+
+        // populate from this.track.sound.packs
+        const packs = this.track.sound.packs;
+
+        for(let i = 0; i < packs.length; i++){
             let option = document.createElement("option");
-            option.textContent = `Type ${i}`;
-            option.value = `${i}`;
+            option.textContent = packs[i].name;
+            option.value = packs[i].name;
             soundTypeMenu.appendChild(option);
         } 
         trackLeft.appendChild(soundTypeMenu);
@@ -69,6 +79,7 @@ class Controls {
         option.textContent = "Select Sound";
         option.setAttribute('selected', true);
         option.setAttribute('disabled', true);
+        
         soundMenu.appendChild(option);
 
         for(let i = 0; i < 5; i++){
@@ -78,8 +89,6 @@ class Controls {
             soundMenu.appendChild(option);
         } 
 
-        console.log(soundMenu);
-
         trackLeft.appendChild(soundMenu);
     }
 
@@ -87,8 +96,9 @@ class Controls {
         // listener for mute
         // listener for track remove
         // listener for volume
+
         remove.addEventListener("click", (e) => {
-            this.track.trackDiv.remove()
+            this.track.trackDiv.remove();
         });
 
     }
