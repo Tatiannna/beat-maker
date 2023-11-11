@@ -2,12 +2,51 @@ import Track from "./track.js"
 
 
 class Beat {
-    constructor(container){
+    constructor(container, nav ){
+
         this.tempo = 1000;
         this.volume = 1000;
         this.tracks = [new Track(container)];
-        //console.log("All tracks:" , this.tracks)
+        this.addNavControls(nav);
     }
+
+    addNavControls(nav){
+        const newTrackButton = document.createElement('button');
+        newTrackButton.textContent = 'Add Track';
+        nav.appendChild(newTrackButton);
+
+        const play = document.createElement('button');
+        play.textContent = "Play";
+        nav.appendChild(play);
+
+        const tempoPlus = document.createElement('button');
+        tempoPlus.textContent = "Tempo +";
+        nav.appendChild(tempoPlus);
+
+        const tempoMinus = document.createElement('button');
+        tempoMinus.textContent = "Tempo -";
+        nav.appendChild(tempoMinus);
+
+
+        newTrackButton.addEventListener("click", (e) =>{
+            this.addTrack(container);
+        });
+        
+        play.addEventListener( "click", (e) =>{
+            this.playAllTracks();
+        });
+        
+        tempoMinus.addEventListener( "click", (e) =>{
+            this.changeTempo(-50);
+            console.log(this.tempo);
+        });
+        
+        tempoPlus.addEventListener( "click", (e) =>{
+            this.changeTempo(50);
+            console.log(this.tempo);
+        });
+    }
+
 
     addTrack(container){
         const track = new Track(container);
