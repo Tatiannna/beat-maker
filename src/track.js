@@ -1,27 +1,28 @@
 import Controls from "./controls.js";
 import Sound from "./sound.js";
+import Beat from "./beat.js";
+
 
 
 class Track {
-    // add track - add segments, listeners to segments, controls, 
 
     constructor(container){
         this.segments = [];
         this.trackDiv = null;
-        this.addTrack(container);
-        this.sound = new Sound(this.trackDiv);
+        this.sound = new Sound();
+        this.buildTrack(container);
     }
 
-    addTrack(container){
+    buildTrack(container){
+
 
         //Track container
-        // const track = document.createElement('div');
         this.trackDiv = document.createElement('div');
         this.trackDiv.classList.add("track");
         container.appendChild(this.trackDiv);
 
-        // CALL ADD CONTROLS HERE
-        let controls = new Controls(this); // PASS IN TRACK OBJECT, NOT DIV
+        // ADD CONTROLS HERE
+        let controls = new Controls(this);
 
 
         //Right track div
@@ -42,7 +43,6 @@ class Track {
         trackRight.appendChild(trackUL);
         this.addSegmentListner(trackUL);
     }
-
 
 
     addSegmentListner(trackUL){
@@ -67,11 +67,10 @@ class Track {
             if (this.segments[count].classList[1] === "on"){
                 this.sound.playSound();
                 console.log(`Playing sound for segment ${count}`);
-                count += 1;
             }else{
                 console.log(`NO SOUND for segment ${count}`);
-                count += 1;
             }
+            count += 1;
             if (count === 8) clearInterval(countInterval);
         }
         const countInterval = setInterval(playSegment.bind(this), 500);
