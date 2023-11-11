@@ -93,6 +93,11 @@ class Controls {
 
             // List available sounds based on Pack selection
             soundMenu.replaceChildren();
+            option = document.createElement("option");
+            option.textContent = "Select Sound";
+            option.setAttribute('selected', true);
+            option.setAttribute('disabled', true);
+            soundMenu.appendChild(option);
             for(let i = 0; i < numSounds; i++){
                 let option = document.createElement("option");
                 option.textContent = `${Sound.packs[packIndex].name} ${i}`;
@@ -100,6 +105,16 @@ class Controls {
                 soundMenu.appendChild(option);
             }
         });
+
+        //Assign track based on sound selection
+        let selectedSound = null;
+            soundMenu.addEventListener("change", (e) => {
+            selectedSound = e.srcElement.value;
+            console.log(selectedSound);
+            this.track.sound.setSound(selectedPack, selectedSound);
+            this.track.sound.playSound();
+        });
+
     }
 
     addControlListeners(remove){
