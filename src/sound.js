@@ -1,10 +1,10 @@
 class Sound {
 
     static packs = [
-        {name: "Claps", count: 2}, 
-        {name: "Blast Block", count: 3}, 
-        {name: "Egg Shaker", count: 3}, 
-        {name: "Mid Tom", count: 3}
+        {name: "Claps", count: 7}, 
+        {name: "Blast Block", count: 9}, 
+        {name: "Egg Shaker", count: 11}, 
+        {name: "Mid Tom", count: 10}
     ];
 
     constructor(packName, num){
