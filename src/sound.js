@@ -1,43 +1,33 @@
-
-
 class Sound {
+
     static packs = [
         {name: "Claps", count: 2}, 
         {name: "Blast Block", count: 3}, 
         {name: "Egg Shaker", count: 3}, 
         {name: "Mid Tom", count: 3}
     ];
-    constructor(){
-        //this.track = track;
-        this.audio = new Audio("./assets/Claps/RD_C_1.wav");
-        
+
+    constructor(packName, num){
+        this.audio = new Audio(this.src(packName, num));
     }
 
     playSound(){
         this.audio.play();
     }
 
-    getSrcPath(packName, num){
+    src(packName, num){
         let srcPath = './assets/';
 
-        srcPath += `${packName}/${num}`;
-        
+        srcPath += `${packName}/${num}.wav`;
         return srcPath;
     }
 
-    getSoundPath(collection, option){
-        return collection + option;
-    }
-
-    setSound(){
-
+    setSound(packName, num){
+        this.audio = new Audio(this.src(packName, num));
     }
 
     random(){
 
     }
 }
-
-
-
 export default Sound;
