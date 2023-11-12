@@ -1,5 +1,6 @@
 import Track from "./track.js";
 import Sound from "./sound.js";
+import Beat from "./beat.js";
 
 class Controls {
 
@@ -123,7 +124,11 @@ class Controls {
         // listener for volume
 
         remove.addEventListener("click", (e) => {
+            let idx = Beat.tracks.indexOf(this.track);
+            console.log("index to remove: ", idx);
+            Beat.tracks.splice(idx, 1);
             this.track.trackDiv.remove();
+            //this.track = undefined;
         });
     }
 }

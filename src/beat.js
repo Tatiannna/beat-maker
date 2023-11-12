@@ -2,11 +2,14 @@ import Track from "./track.js"
 
 
 class Beat {
+
+    static tracks = [];
+
     constructor(container, nav ){
 
         this.tempo = 1000;
         this.volume = 1000;
-        this.tracks = [new Track(container)];
+        Beat.tracks.push(new Track(container));
         this.addNavControls(nav);
     }
 
@@ -50,27 +53,38 @@ class Beat {
 
     addTrack(container){
         const track = new Track(container);
-        this.tracks.push(track);
-        // console.log("All tracks:" , this.tracks)
+        Beat.tracks.push(track);
+        // console.log("All tracks:" ,tracks)
     }
 
 
     playAllTracks(){
         const playFunctions = [];
 
-        console.log(this.tracks);
+        console.log(Beat.tracks);
+        console.log(Beat.tracks.length);
 
-        this.tracks.forEach( (track) => {
-            playFunctions.push(new Promise(track.playTrack.bind(track)));
-        })
-        console.log(playFunctions);
+        if (Beat.tracks.length > 0){
+            Beat.tracks.forEach( (track) => {
+                playFunctions.push(new Promise(track.playTrack.bind(track)));
+            })
+            console.log(playFunctions);
 
-        Promise.all(playFunctions).catch(() => console.log("Something went wrong!"));
+            Promise.all(playFunctions).catch(() => console.log("Something went wrong!"));
+        }else{
+            console.log("No tracks to play!");
+        }
+            
     }
 
     changeTempo(diff){
         this.tempo += diff;
     }
+
+    // removeTrack(track){
+    //     let idx = Beat.tracks.indexOf(track);
+    //     delete Beat.tracks[idx];
+    // }
 }
 
 
