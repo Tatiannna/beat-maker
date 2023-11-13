@@ -6,9 +6,16 @@
 }
 
 #nav {
-    height: 120px;
+    height: 150px;
     background-color: black;
     color: white;
+    display: flex;
+}
+
+#canvas{
+    background-color: black;
+    height: 100%;
+    width: 500px;
 }
 
 
@@ -54,4 +61,6 @@ ul {
 .off{
     background-color: white;
 }
+
+
 
