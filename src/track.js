@@ -63,20 +63,18 @@ class Track {
     playTrack(){
         let count = 0;
 
-        const playSegment = function(){
+        function playSegment(){
             if (this.segments[count].classList[1] === "on"){
                 this.sound.playSound();
-                console.log(`Playing sound for segment ${count}`);
+                console.log(`Playing sound for segment ${count+1}`);
             }else{
-                console.log(`NO SOUND for segment ${count}`);
+                console.log(`NO SOUND for segment ${count+1}`);
             }
             count += 1;
             if (count === 8) clearInterval(countInterval);
         }
-        const countInterval = setInterval(playSegment.bind(this), 500);
+        const countInterval = setInterval(playSegment.bind(this), 1000);
     }
-
-
     // randomize (add "on" class to random segments)
 }
 
