@@ -1,4 +1,4 @@
-import Track from "./track.js"
+import Track from "./track.js";
 
 
 class Beat {
@@ -9,26 +9,38 @@ class Beat {
 
         this.tempo = 1000;
         this.volume = 1000;
-        Beat.tracks.push(new Track(container));
+
+        for(let i = 0; i < 5; i++){
+            Beat.tracks.push(new Track(container));
+        }
         this.addNavControls(nav);
     }
 
     addNavControls(nav){
+        const navRight = document.getElementById('nav-left');
         const newTrackButton = document.createElement('button');
         newTrackButton.textContent = 'Add Track';
-        nav.appendChild(newTrackButton);
+        navRight.appendChild(newTrackButton);
 
         const play = document.createElement('button');
         play.textContent = "Play";
-        nav.appendChild(play);
+        navRight.appendChild(play);
 
         const tempoPlus = document.createElement('button');
         tempoPlus.textContent = "Tempo +";
-        nav.appendChild(tempoPlus);
+        navRight.appendChild(tempoPlus);
 
         const tempoMinus = document.createElement('button');
         tempoMinus.textContent = "Tempo -";
-        nav.appendChild(tempoMinus);
+        navRight.appendChild(tempoMinus);
+
+        const volumeMinus = document.createElement('button');
+        volumeMinus.textContent = "Volume -";
+        navRight.appendChild(volumeMinus);
+
+        const volumePlus = document.createElement('button');
+        volumePlus.textContent = "Volume +";
+        navRight.appendChild(volumePlus);
 
 
         newTrackButton.addEventListener("click", (e) =>{
@@ -41,12 +53,18 @@ class Beat {
         
         tempoMinus.addEventListener( "click", (e) =>{
             this.changeTempo(-50);
-            console.log(this.tempo);
         });
         
         tempoPlus.addEventListener( "click", (e) =>{
             this.changeTempo(50);
-            console.log(this.tempo);
+        });
+
+        volumeMinus.addEventListener( "click", (e) =>{
+            this.changeVolume(-50);
+        });
+
+        volumePlus.addEventListener( "click", (e) =>{
+            this.changeVolume(50);
         });
     }
 
@@ -60,9 +78,6 @@ class Beat {
 
     playAllTracks(){
         const playFunctions = [];
-
-        console.log(Beat.tracks);
-        console.log(Beat.tracks.length);
 
         if (Beat.tracks.length > 0){
             Beat.tracks.forEach( (track) => {
@@ -79,12 +94,13 @@ class Beat {
 
     changeTempo(diff){
         this.tempo += diff;
+        console.log(this.tempo);
     }
 
-    // removeTrack(track){
-    //     let idx = Beat.tracks.indexOf(track);
-    //     delete Beat.tracks[idx];
-    // }
+    changeVolume(diff){
+        this.volume += diff;
+        console.log(this.volume);
+    }
 }
 
 
