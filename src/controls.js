@@ -35,8 +35,9 @@ class Controls {
         trackLeft.appendChild(testButton);
 
         testButton.addEventListener("click", (e) =>{
-            const audioElement = new Audio("./assets/RD_C_1.wav");
-            audioElement.play();
+            // const audioElement = new Audio();
+            // audioElement.play();
+            this.track.sound.playSound();
         });
 
         // Add Track Play button
@@ -109,7 +110,7 @@ class Controls {
 
         //Assign track based on sound selection
         let selectedSound = null;
-            soundMenu.addEventListener("change", (e) => {
+        soundMenu.addEventListener("change", (e) => {
             selectedSound = e.srcElement.value;
             console.log(selectedSound);
             this.track.sound.setSound(selectedPack, selectedSound);
