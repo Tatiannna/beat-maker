@@ -105,9 +105,9 @@ select {
     padding: 0px;
 }
 
-/* select:hover {
-    background-color: grey;
-} */
+select:hover {
+    background-color: #484848;
+}
 
 
 .track-div-right{
