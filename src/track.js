@@ -11,10 +11,10 @@ class Track {
         this.trackDiv = null;
         this.sound = new Sound();
         this.buildTrack(container);
+        this.stopped = false;
     }
 
     buildTrack(container){
-
 
         //Track container
         this.trackDiv = document.createElement('div');
@@ -59,6 +59,20 @@ class Track {
         });
     }
 
+    addSegmentListner(trackUL){
+        trackUL.addEventListener("click", (e) =>{
+            if (e.srcElement.classList[0] == "segment"){
+                if (e.srcElement.classList[1] === "off"){
+                    e.target.classList.remove("off");
+                    e.target.classList.add("on");
+                }else{
+                    e.target.classList.remove("on");
+                    e.target.classList.add("off");
+                }
+            }
+        });
+    }
+
 
     playTrack(){
         let count = 0;
@@ -70,18 +84,20 @@ class Track {
         }
 
         function playSegment(){
-            if (count === 8){
-                clearInterval(countInterval);
-                return;
-            }
-            this.segments[count].classList.add("playing");
-            if (this.segments[count].classList[1] === "on"){
-                this.sound.playSound();
-                console.log(`Playing sound for segment ${count+1}`);
-            }else{
-                console.log(`NO SOUND for segment ${count+1}`);
-            }
 
+            if (count === 8 || this.stopped === true){
+                clearInterval(countInterval);
+                this.stopped = false;
+                return;
+            }else{
+                this.segments[count].classList.add("playing");
+                if (this.segments[count].classList[1] === "on"){
+                    this.sound.playSound();
+                    console.log(`Playing sound for segment ${count+1}`);
+                }else{
+                    console.log(`NO SOUND for segment ${count+1}`);
+                }
+            }
             setTimeout(removePlayingClass.bind(this, this.segments[count]), delay);
             
             console.log("After playing: ", this.segments[count].classList);

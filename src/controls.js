@@ -21,10 +21,12 @@ class Controls {
         // Add controls to left track div
         let remove = document.createElement('button');
         remove.textContent = 'Remove';
-        let mute = document.createElement('button');
-        mute.textContent = 'Mute';
         trackLeft.appendChild(remove);
-        trackLeft.appendChild(mute);
+
+
+        let stop = document.createElement('button');
+        stop.textContent = 'Stop';
+        trackLeft.appendChild(stop);
 
         // 'Remove' button listener
         this.addControlListeners(remove);
@@ -106,6 +108,10 @@ class Controls {
                 option.value = `${i}`;
                 soundMenu.appendChild(option);
             }
+        });
+
+        stop.addEventListener( 'click', (e) => {
+            this.track.stopped = true;
         });
 
         //Assign track based on sound selection
