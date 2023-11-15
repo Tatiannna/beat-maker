@@ -139,6 +139,7 @@ li{
 
 .segment:hover{
     background-color: rgb(243, 252, 74);
+    border: 1px solid black;
 }
 /* .on{ */
     /* border: 1px solid black; */
@@ -198,6 +199,34 @@ li:nth-of-type(7){
 li:nth-of-type(8){
     background-color: rgb(72, 72, 72);
 }
+
+
+
+
+/* li:nth-of-type(8){
+    background-color: rgb(168, 168, 168);
+}
+li:nth-of-type(7){
+    background-color: rgb(151, 151, 151);
+}
+li:nth-of-type(6){
+    background-color: rgb(138, 138, 138);
+}
+li:nth-of-type(5){
+    background-color: rgb(121, 121, 121);
+}
+li:nth-of-type(4){
+    background-color: rgb(113, 113, 113);
+}
+li:nth-of-type(3){
+    background-color: rgb(92, 92, 92);
+}
+li:nth-of-type(2){
+    background-color: rgb(83, 83, 83);
+}
+li:nth-of-type(1){
+    background-color: rgb(72, 72, 72);
+} */
 
 
 
