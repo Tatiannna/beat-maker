@@ -60,10 +60,13 @@
 }
 
 .track-div-left{
-    /* background-color: black; */
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    background-color: rgb(80, 107, 25); 
+    /* border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px; */
+    border-radius: 20px;
     padding-left: 20px;
+    padding-top: 5px;
+    margin-right: 15px;
 }
 
 button {
@@ -90,7 +93,7 @@ select {
     color: rgb(51, 50, 50);
     background-color: grey;
     /* border: none; */
-    margin: 3px;
+    margin: 4px;
     height: 25px;
     padding: 0px;
 }
@@ -171,7 +174,7 @@ li:nth-of-type(8){
 }
 
 li.on {
-    background-color: black;
+    background-color: rgb(80, 107, 25);
     /* border: 1px solid grey; */
 }
 
