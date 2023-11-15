@@ -10,7 +10,7 @@ class Beat {
         this.tempo = 1000;
         this.volume = 1000;
 
-        for(let i = 0; i < 5; i++){
+        for(let i = 0; i < 8; i++){
             Beat.tracks.push(new Track(container));
         }
         this.addNavControls(nav);
@@ -39,7 +39,7 @@ class Beat {
         navRight.appendChild(volumeMinus);
 
         const volumePlus = document.createElement('button');
-        volumePlus.textContent = "Volume +";
+        volumePlus.textContent = "Volume+";
         navRight.appendChild(volumePlus);
 
 
