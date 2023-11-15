@@ -101,7 +101,8 @@ class Sound {
                 // barHeight = dataArray[i];
                 //barHeight = freqData[i];
                 barHeight = agg[i];
-                ctx.fillStyle = 'grey';
+                // ctx.fillStyle = 'grey';
+                ctx.fillStyle = "rgb(243, 252, 74)";
                 ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
                 x += barWidth;
             }
