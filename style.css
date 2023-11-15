@@ -170,7 +170,7 @@ li{
 } */
 
 .segment.playing{
-    background-color: black; 
+    background-color: rgb(55, 55, 55); 
     /* border: 2px solid white; */
 }
 
