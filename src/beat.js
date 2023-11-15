@@ -4,7 +4,7 @@ import Track from "./track.js";
 class Beat {
 
     static tracks = [];
-    static tempo = 1000;
+    static tempo = 1400;
 
     constructor(container, nav ){
 
