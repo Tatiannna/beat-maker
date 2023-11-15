@@ -4,10 +4,10 @@ import Track from "./track.js";
 class Beat {
 
     static tracks = [];
+    static tempo = 1000;
 
     constructor(container, nav ){
 
-        this.tempo = 1000;
         this.volume = 1000;
 
         for(let i = 0; i < 8; i++){
@@ -69,6 +69,7 @@ class Beat {
     }
 
 
+
     addTrack(container){
         const track = new Track(container);
         Beat.tracks.push(track);
@@ -93,7 +94,7 @@ class Beat {
     }
 
     changeTempo(diff){
-        this.tempo += diff;
+        Beat.tempo += diff;
         console.log(this.tempo);
     }
 

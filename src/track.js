@@ -62,6 +62,8 @@ class Track {
 
     playTrack(){
         let count = 0;
+        const second = 1000;
+        let delay = 2 * second - Beat.tempo;
 
         function removePlayingClass(segment){
             segment.classList.remove("playing");
@@ -80,12 +82,12 @@ class Track {
                 console.log(`NO SOUND for segment ${count+1}`);
             }
 
-            setTimeout(removePlayingClass.bind(this, this.segments[count]), 1000);
+            setTimeout(removePlayingClass.bind(this, this.segments[count]), delay);
             
             console.log("After playing: ", this.segments[count].classList);
             count += 1;
         }
-        const countInterval = setInterval(playSegment.bind(this), 1000);
+        const countInterval = setInterval(playSegment.bind(this), delay);
     }
     // randomize (add "on" class to random segments)
 }
