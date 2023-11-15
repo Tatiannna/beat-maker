@@ -63,15 +63,27 @@ class Track {
     playTrack(){
         let count = 0;
 
+        function removePlayingClass(segment){
+            segment.classList.remove("playing");
+        }
+
         function playSegment(){
+            if (count === 8){
+                clearInterval(countInterval);
+                return;
+            }
+            this.segments[count].classList.add("playing");
             if (this.segments[count].classList[1] === "on"){
                 this.sound.playSound();
                 console.log(`Playing sound for segment ${count+1}`);
             }else{
                 console.log(`NO SOUND for segment ${count+1}`);
             }
+
+            setTimeout(removePlayingClass.bind(this, this.segments[count]), 1000);
+            
+            console.log("After playing: ", this.segments[count].classList);
             count += 1;
-            if (count === 8) clearInterval(countInterval);
         }
         const countInterval = setInterval(playSegment.bind(this), 1000);
     }
