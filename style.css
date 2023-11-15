@@ -10,19 +10,19 @@
     width: 100%;
     height: 100%;
     /* padding-left: 150px; */
-    /* background-color: black; */
+    background-color: grey;
 }
 
 #nav {
-    height: 150px;
-    /* background-color: black; */
+    height: 200px;
+    background-color: grey;
     color: white;
     display: flex;
 }
 
 #nav-left {
     width: 35%;
-    background-color: black;
+    background-color: #484848;
     border-radius: 20px;
     padding: 20px;
     margin-left: 10px;
@@ -41,7 +41,7 @@
     width: 100%;
     margin-left: 10px;
 
-    border: 1px solid black;
+    border: 1px solid rgb(55, 55, 55);
 }
 
 
@@ -49,7 +49,7 @@
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
-    border: 1px solid black;
+    border: 1px solid rgb(87, 87, 87);
     display: flex;
     /* width: 750px; */
     width: 100%;
@@ -68,9 +68,9 @@
 
 button {
     border-radius: 10px;
-    color: black;
-    background-color: white;
-    border: 1px solid black;
+    color: rgb(51, 50, 50);
+    background-color: grey;
+    border: 1px solid grey;
     margin: 3px;
     height: 25px;
     width: 65px;
@@ -78,11 +78,17 @@ button {
     /* border: none; */
 }
 
+button:hover {
+    background-color: #484848;
+    color: white;
+}
+
+
 select {
     border-radius: 10px;
-    border: 1px solid black;
-    color: black;
-    background-color: white;
+    border: 1px solid grey;
+    color: rgb(51, 50, 50);
+    background-color: grey;
     /* border: none; */
     margin: 3px;
     height: 25px;
@@ -116,28 +122,57 @@ ul {
 .segment{
     width: 40px;
     height: 60px;
-    margin: 6px;
+    margin: 7px;
     /* border: 2px solid black; */
     border-radius: 20px;
 }
 
 .segment:hover{
-    background-color: grey;
+    background-color: black;
 }
 
 .on{
-    background-color: pink;
     border: 1px solid black;
-
 }
 
 .off{
-    background-color: white;
-    border: 1px solid black;
+    /* background-color: rgb(207, 88, 88); */
+    border: 1px solid rgb(119, 119, 119);
 }
 
-button:hover {
-    background-color: grey;
+
+li:nth-of-type(1){
+    background-color: rgb(168, 168, 168);
+}
+li:nth-of-type(2){
+    background-color: rgb(151, 151, 151);
+}
+li:nth-of-type(3){
+    background-color: rgb(138, 138, 138);
+}
+li:nth-of-type(4){
+    background-color: rgb(121, 121, 121);
+}
+li:nth-of-type(5){
+    background-color: rgb(113, 113, 113);
+}
+li:nth-of-type(6){
+    background-color: rgb(92, 92, 92);
+}
+li:nth-of-type(7){
+    background-color: rgb(83, 83, 83);
+}
+li:nth-of-type(8){
+    background-color: rgb(72, 72, 72);
+}
+
+.on:hover{
+    background-color: black;
+}
+
+li.on {
+    background-color: black;
+    /* border: 1px solid grey; */
 }
 
 
