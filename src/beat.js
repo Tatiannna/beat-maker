@@ -19,7 +19,7 @@ class Beat {
     addNavControls(nav){
         const navRight = document.getElementById('nav-left');
         const newTrackButton = document.createElement('button');
-        newTrackButton.textContent = 'Add Track';
+        newTrackButton.textContent = 'Track +';
         navRight.appendChild(newTrackButton);
 
         const play = document.createElement('button');
