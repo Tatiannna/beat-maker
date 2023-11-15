@@ -93,6 +93,21 @@ class Beat {
             
     }
 
+    pauseAllTracks(){
+        const pauseFunctions = [];
+
+        if (Beat.tracks.length > 0){
+            Beat.tracks.forEach( (track) => {
+                pauseFunctions.push(new Promise(track.pauseTrack.bind(track)));
+            })
+            console.log(pauseFunctions);
+
+            Promise.all(pauseFunctions).catch(() => console.log("Something went wrong!"));
+        }else{
+            console.log("No tracks to play!");
+        }
+    }
+
     changeTempo(diff){
         Beat.tempo += diff;
         console.log(this.tempo);
