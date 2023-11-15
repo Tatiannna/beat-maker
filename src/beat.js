@@ -42,6 +42,10 @@ class Beat {
         volumePlus.textContent = "Volume+";
         navRight.appendChild(volumePlus);
 
+        const stop = document.createElement('button');
+        stop.textContent = "Stop";
+        navRight.appendChild(stop);
+
 
         newTrackButton.addEventListener("click", (e) =>{
             this.addTrack(container);
@@ -65,6 +69,10 @@ class Beat {
 
         volumePlus.addEventListener( "click", (e) =>{
             this.changeVolume(50);
+        });
+
+        stop.addEventListener("click", (e) =>{
+            this.stopAllTracks();
         });
     }
 
@@ -93,18 +101,24 @@ class Beat {
             
     }
 
-    pauseAllTracks(){
-        const pauseFunctions = [];
+    stopAllTracks(){
+        const stopFunctions = [];
+
+        const stopTrack = function(){
+            Beat.tracks.forEach( (track) => {
+                track.stopped = true;
+            });
+        }
 
         if (Beat.tracks.length > 0){
             Beat.tracks.forEach( (track) => {
-                pauseFunctions.push(new Promise(track.pauseTrack.bind(track)));
+                stopFunctions.push(new Promise(stopTrack.bind(track)));
             })
-            console.log(pauseFunctions);
+            console.log(stopFunctions);
 
-            Promise.all(pauseFunctions).catch(() => console.log("Something went wrong!"));
+            Promise.all(stopFunctions).catch(() => console.log("Something went wrong!"));
         }else{
-            console.log("No tracks to play!");
+            console.log("No tracks playing!");
         }
     }
 
