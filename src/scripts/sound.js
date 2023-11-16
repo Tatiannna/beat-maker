@@ -7,7 +7,10 @@ class Sound {
         {name: "Claps", count: 7}, 
         {name: "Blast Block", count: 9}, 
         {name: "Egg Shaker", count: 11}, 
-        {name: "Mid Tom", count: 10}
+        {name: "Mid Tom", count: 10},
+        {name: "Percussion Kick", count: 20},
+        {name: "Percussion Snare", count: 20},
+        {name: "Percussion Hi-Hat", count: 20}
     ];
 
     constructor(packName, num){
