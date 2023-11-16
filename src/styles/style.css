@@ -2,6 +2,18 @@
     height: 100px;
 } */
 
+h1 {
+    font-size: 45px;
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 700;
+    color: rgb(243, 252, 74);
+    margin-bottom: 32px;
+    margin-top: 25px;
+
+}
+
+
+
 img {
     width: 30px;
     height: 30px;
@@ -19,7 +31,7 @@ img {
 }
 
 #nav {
-    height: 200px;
+    height: 250px;
     background-color: grey;
     color: white;
     display: flex;
@@ -27,7 +39,7 @@ img {
 }
 
 #nav-left {
-    width: 35%;
+    /* width: 30%; */
     background-color: #484848;
     border-radius: 20px;
     padding: 20px;
