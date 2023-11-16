@@ -12,6 +12,7 @@ class Track {
         this.sound = new Sound();
         this.buildTrack(container);
         this.stopped = false;
+        this.loop = true;
     }
 
     buildTrack(container){
@@ -85,7 +86,7 @@ class Track {
 
         function playSegment(){
 
-            if (count === 8 || this.stopped === true){
+            if ((count === 8  && this.loop === false) || this.stopped === true){
                 clearInterval(countInterval);
                 this.stopped = false;
                 return;
@@ -102,6 +103,10 @@ class Track {
             
             console.log("After playing: ", this.segments[count].classList);
             count += 1;
+
+            if (count === 8 && this.loop === true){
+                count = 0;
+            }
         }
         const countInterval = setInterval(playSegment.bind(this), delay);
     }
