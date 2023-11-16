@@ -2,6 +2,11 @@
     height: 100px;
 } */
 
+img {
+    width: 30px;
+    height: 30px;
+}
+
 
 #container {
     display: flex;
