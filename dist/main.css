@@ -1,0 +1,300 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/style.css ***!
+  \****************************************************************************************************/
+/* body {
+    height: 100px;
+} */
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 800px; */
+    width: 100%;
+    height: 100%;
+    /* padding-left: 150px; */
+    background-color: grey;
+}
+
+#nav {
+    height: 200px;
+    background-color: grey;
+    color: white;
+    display: flex;
+    padding-top: 12px
+}
+
+#nav-left {
+    width: 35%;
+    background-color: #484848;
+    border-radius: 20px;
+    padding: 20px;
+    margin-left: 10px;
+}
+#nav-right {
+    width: 70%;
+    margin-right: 20px;
+}
+
+ #nav-left > button {
+    /* background-color: rgb(80, 107, 25); */
+    color: white;
+ }
+
+
+#canvas{
+    background-color: #484848;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    margin-left: 10px;
+
+    border: 1px solid rgb(55, 55, 55);
+}
+
+
+.track {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 1px solid rgb(87, 87, 87);
+    display: flex;
+    /* width: 750px; */
+    width: 100%;
+    /* height: 70px; */
+    border-radius: 20px;
+    padding: 15px;
+    background-color: #484848;
+}
+
+.track-div-left{
+    background-color: rgb(243, 252, 74); 
+    /* border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px; */
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-right: 15px;
+}
+
+button {
+    border-radius: 10px;
+    /* color: rgb(51, 50, 50); */
+    color: white;
+    background-color: grey;
+    border: 1px solid grey;
+    margin: 3px;
+    height: 27px;
+    width: 65px;
+    padding: 5px;
+    /* border: none; */
+}
+
+button:hover {
+    background-color: #484848;
+    color: white;
+}
+
+
+select {
+    border-radius: 10px;
+    border: 1px solid grey;
+    /* color: rgb(51, 50, 50); */
+    color: white;
+    background-color: grey;
+    /* border: none; */
+    margin: 4px;
+    height: 27px;
+    padding: 0px;
+}
+
+select:hover {
+    background-color: #484848;
+}
+
+
+.track-div-right{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* background-color: black; */
+    border-style: solid;
+    border-color: black;
+    justify-content: flex-left;
+    padding: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li{
+    width: 40px;
+    height: 60px;
+    margin: 7px;
+    /* border: 2px solid black; */
+    border-radius: 20px;
+    border: 1px solid rgb(243, 252, 74);
+}
+
+.segment:hover{
+    background-color: rgb(243, 252, 74);
+    border: 1px solid black;
+}
+/* .on{ */
+    /* border: 1px solid black; */
+/* } */
+
+
+/* .off{ */
+    /* background-color: rgb(207, 88, 88); */
+    /* border: 1px solid rgb(119, 119, 119); */
+    /* border: 1px solid rgb(243, 252, 74); */
+/* } */
+
+
+/* .on:hover{
+    background-color: rgb(80, 107, 25);
+} */
+
+.segment.on {
+    background-color: rgb(243, 252, 74);
+    /* border: 1px solid grey; */
+}
+
+/* .segment.on.playing{
+    background-color: black;
+}
+
+.segment.off.playing{
+    background-color: black;
+} */
+
+.segment.playing{
+    background-color: rgb(55, 55, 55); 
+    /* border: 2px solid white; */
+}
+
+li:nth-of-type(1){
+    background-color: rgb(168, 168, 168);
+}
+li:nth-of-type(2){
+    background-color: rgb(151, 151, 151);
+}
+li:nth-of-type(3){
+    background-color: rgb(138, 138, 138);
+}
+li:nth-of-type(4){
+    background-color: rgb(121, 121, 121);
+}
+li:nth-of-type(5){
+    background-color: rgb(113, 113, 113);
+}
+li:nth-of-type(6){
+    background-color: rgb(92, 92, 92);
+}
+li:nth-of-type(7){
+    background-color: rgb(83, 83, 83);
+}
+li:nth-of-type(8){
+    background-color: rgb(72, 72, 72);
+}
+
+
+
+
+/* li:nth-of-type(8){
+    background-color: rgb(168, 168, 168);
+}
+li:nth-of-type(7){
+    background-color: rgb(151, 151, 151);
+}
+li:nth-of-type(6){
+    background-color: rgb(138, 138, 138);
+}
+li:nth-of-type(5){
+    background-color: rgb(121, 121, 121);
+}
+li:nth-of-type(4){
+    background-color: rgb(113, 113, 113);
+}
+li:nth-of-type(3){
+    background-color: rgb(92, 92, 92);
+}
+li:nth-of-type(2){
+    background-color: rgb(83, 83, 83);
+}
+li:nth-of-type(1){
+    background-color: rgb(72, 72, 72);
+} */
+
+
+
+
+
+
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+
