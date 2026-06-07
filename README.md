@@ -1,5 +1,7 @@
 # Beats
 
+[beat-maker](https://tatiannna.github.io/beat-maker/)
+
 ### Background
 
 Beats will allow users to create, customize and stack music tracks to create beats! The intuitive interface will allow users to experiment with beat-making with a variety of sound/instrument options.
